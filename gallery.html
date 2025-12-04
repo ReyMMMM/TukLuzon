@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TukLuzon - Discover Luzon</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inria+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="gallery-styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h2 class="header-logo">
+        <span class="logo-text">TukLuzon</span>
+        <span class="logo-subtitle"> | TRAVEL BLOG</span>
+      </h2>
+      <nav class="header-nav">
+        <a href="homepage.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+      </nav>
+    </header>
+    <div class="bg">
+      <h1 class="main-title">GALLERY</h1>
+      <div class="navigation-container">
+        <div class="navigation-button">
+          <img
+            src="images/hundredislands/hundredislands.png"
+            alt="Hundred Islands"
+          />
+        </div>
+        <div class="navigation-button">
+          <img src="images/mtpulag/mtpulag.png" alt="Mt. Pulag" />
+        </div>
+        <div class="navigation-button">
+          <img
+            src="images/sumaguingcave/sumaguing.png"
+            alt="Sagada Sumaguing Cave"
+          />
+        </div>
+        <div class="navigation-button">
+          <img src="images/vigan/vigan.png" alt="Vigan" />
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-main">
+      <h1 class="title">
+        <span class="title-text location-title">HUNDRED ISLANDS</span>
+      </h1>
+      <div class="gallery-container">
+        <div class="img-box">
+          <img src="images/hundredislands/hundredislands1.png" alt="Image 1" />
+        </div>
+        <div class="img-box">
+          <img src="images/hundredislands/hundredislands2.png" alt="Image 2" />
+        </div>
+        <div class="img-box">
+          <img src="images/hundredislands/hundredislands3.png" alt="Image 3" />
+        </div>
+        <div class="img-box">
+          <img src="images/hundredislands/hundredislands4.png" alt="Image 4" />
+        </div>
+        <div class="img-box">
+          <img src="images/hundredislands/hundredislands5.png" alt="Image 5" />
+        </div>
+        <div class="img-box">
+          <img src="images/hundredislands/hundredislands6.png" alt="Image 6" />
+        </div>
+      </div>
+      <div class="arrows-container">
+        <div class="arrows">
+          <img
+            id="arrowPrev"
+            src="images/arrows/arrow1.svg"
+            alt="Previous location"
+          />
+          <img
+            id="arrowNext"
+            src="images/arrows/arrow2.svg"
+            alt="Next location"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="group-members">
+      <p class="credits">
+        Aragones | Bactad | Manalese | Manio | Ramos | Tan | Trinidad
+      </p>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="copyright">©TukLuzon 2025</p>
+
+        <p class="footer-text">
+          © 2025 TukLuzon. All Rights Reserved. | Discovering Luzon, one
+          adventure at a time.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const locations = [
+          {
+            title: "HUNDRED ISLANDS",
+            images: [
+              "images/hundredislands/hundredislands1.png",
+              "images/hundredislands/hundredislands2.png",
+              "images/hundredislands/hundredislands3.png",
+              "images/hundredislands/hundredislands4.png",
+              "images/hundredislands/hundredislands5.png",
+              "images/hundredislands/hundredislands6.png",
+            ],
+          },
+          {
+            title: "MT PULAG",
+            images: [
+              "images/mtpulag/mtpulag1.png",
+              "images/mtpulag/mtpulag2.png",
+              "images/mtpulag/mtpulag3.png",
+              "images/mtpulag/mtpulag4.png",
+              "images/mtpulag/mtpulag5.png",
+              "images/mtpulag/mtpulag6.png",
+            ],
+          },
+          {
+            title: "SUMAGUING CAVE",
+            images: [
+              "images/sumaguingcave/sumaguing1.png",
+              "images/sumaguingcave/sumaguing2.png",
+              "images/sumaguingcave/sumaguing3.png",
+              "images/sumaguingcave/sumaguing4.png",
+              "images/sumaguingcave/sumaguing5.png",
+              "images/sumaguingcave/sumaguing6.png",
+            ],
+          },
+          {
+            title: "VIGAN",
+            images: [
+              "images/vigan/vigan1.png",
+              "images/vigan/vigan2.png",
+              "images/vigan/vigan3.png",
+              "images/vigan/vigan4.png",
+              "images/vigan/vigan5.png",
+              "images/vigan/vigan6.png",
+            ],
+          },
+        ];
+
+        let index = 0;
+        const titleEl = document.querySelector(".title-text");
+        const picEls = Array.from(
+          document.querySelectorAll(".gallery-container img")
+        );
+        const prevBtn = document.getElementById("arrowPrev");
+        const nextBtn = document.getElementById("arrowNext");
+
+        // swapContent updates DOM immediately (no animation)
+        function swapContent(i) {
+          const loc = locations[i];
+          if (!loc) return;
+          if (titleEl) titleEl.textContent = loc.title;
+          picEls.forEach((imgEl, idx) => {
+            if (loc.images[idx]) {
+              imgEl.src = loc.images[idx];
+              imgEl.alt = loc.title + " " + (idx + 1);
+              imgEl.style.display = "";
+            } else {
+              imgEl.style.display = "none";
+            }
+          });
+        }
+
+        // perform sweep animation when transitioning locations
+        let isAnimating = false;
+        function transitionTo(i) {
+          if (isAnimating || i === index) return;
+          const container = document.querySelector(".gallery-container");
+          const titleNode = document.querySelector(".title-text");
+          if (!container) {
+            index = i;
+            swapContent(i);
+            return;
+          }
+          isAnimating = true;
+          // play sweep-out
+          container.classList.add("sweep-out");
+          if (titleNode) titleNode.classList.add("sweep-out");
+
+          function handleOut(e) {
+            // ensure finished sweepOut
+            if (e.animationName !== "sweepOut") return;
+            container.removeEventListener("animationend", handleOut);
+            if (titleNode) titleNode.classList.remove("sweep-out");
+            container.classList.remove("sweep-out");
+            // swap content now
+            swapContent(i);
+            // start sweep-in
+            container.classList.add("sweep-in");
+            if (titleNode) titleNode.classList.add("sweep-in");
+
+            function handleIn(ev) {
+              if (ev.animationName !== "sweepIn") return;
+              container.removeEventListener("animationend", handleIn);
+              if (titleNode) titleNode.classList.remove("sweep-in");
+              container.classList.remove("sweep-in");
+              isAnimating = false;
+            }
+            container.addEventListener("animationend", handleIn);
+          }
+
+          container.addEventListener("animationend", handleOut);
+          index = i;
+        }
+
+        prevBtn &&
+          prevBtn.addEventListener("click", function () {
+            transitionTo((index - 1 + locations.length) % locations.length);
+          });
+
+        nextBtn &&
+          nextBtn.addEventListener("click", function () {
+            transitionTo((index + 1) % locations.length);
+          });
+
+        // clicking top gallery thumbnails switches location
+        const topThumbs = Array.from(
+          document.querySelectorAll(".navigation-container img")
+        );
+        topThumbs.forEach((thumb, idx) => {
+          thumb.addEventListener("click", () => {
+            transitionTo(idx % locations.length);
+            const titleElScroll = document.querySelector(".title");
+            if (titleElScroll)
+              titleElScroll.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+          });
+        });
+
+        // initial render
+        swapContent(index);
+      });
+    </script>
+  </body>
+</html>
