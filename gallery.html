@@ -8,6 +8,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inria+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="colors.css" />
+    <link rel="stylesheet" href="header-footer.css" />
     <link rel="stylesheet" href="gallery-styles.css" />
   </head>
   <body>
@@ -19,7 +21,7 @@
       <nav class="header-nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
-        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="#" class="nav-link">Gallery</a>
       </nav>
     </header>
     <div class="bg">
@@ -246,6 +248,79 @@
         swapContent(index);
       });
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top <=
+            (window.innerHeight || document.documentElement.clientHeight) * 0.8
+          );
+        }
+
+        // Function to add animation classes
+        function addAnimationClasses() {
+          // Animate gallery container
+          const gallery = document.querySelector(".gallery-container");
+          if (gallery && isInViewport(gallery)) {
+            gallery.classList.add("animate-on-scroll", "visible");
+
+            // Add staggered animation to images
+            const images = gallery.querySelectorAll(".img-box");
+            images.forEach((img, index) => {
+              img.classList.add(
+                "animate-on-scroll",
+                "delay-" + ((index % 3) + 1)
+              );
+              img.classList.add("visible");
+            });
+          } else if (gallery) {
+            gallery.classList.add("animate-on-scroll");
+
+            const images = gallery.querySelectorAll(".img-box");
+            images.forEach((img, index) => {
+              img.classList.add(
+                "animate-on-scroll",
+                "delay-" + ((index % 3) + 1)
+              );
+            });
+          }
+
+          // Animate arrows container
+          const arrows = document.querySelector(".arrows-container");
+          if (arrows && isInViewport(arrows)) {
+            arrows.classList.add("animate-on-scroll", "visible");
+          } else if (arrows) {
+            arrows.classList.add("animate-on-scroll");
+          }
+        }
+
+        // Run on load
+        addAnimationClasses();
+
+        // Run on scroll
+        window.addEventListener("scroll", function () {
+          addAnimationClasses();
+        });
+
+        // Run on resize
+        window.addEventListener("resize", addAnimationClasses);
+
+        // Also trigger when switching locations via arrows
+        const prevBtn = document.getElementById("arrowPrev");
+        const nextBtn = document.getElementById("arrowNext");
+
+        if (prevBtn && nextBtn) {
+          prevBtn.addEventListener("click", function () {
+            setTimeout(addAnimationClasses, 400);
+          });
+
+          nextBtn.addEventListener("click", function () {
+            setTimeout(addAnimationClasses, 400);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
-

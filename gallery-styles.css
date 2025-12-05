@@ -1,15 +1,4 @@
-/* ===== Global Styles ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  color: white;
-}
-
-body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-}
+/* gallery-styles.css - Gallery page specific styles for TukLuzon */
 
 /* ===== ANIMATIONS ===== */
 @keyframes sweepOut {
@@ -34,78 +23,14 @@ body {
   }
 }
 
-/* ===== HEADER & NAVIGATION ===== */
-.header {
-  background-color: #296044;
-  color: white;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.header h2 {
-  margin: 0;
-  padding: 15px 20px;
-  font-size: 24px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.header-nav {
-  background-color: #243832;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  width: 100%;
-  padding: 15px 20px;
-  vertical-align: top;
-}
-
-.header-nav a {
-  color: white;
-  text-decoration: none;
-  margin-right: 30px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.header-nav a:hover {
-  color: #d8e8e2;
-  text-decoration: underline;
-}
-
-.logo-text {
-  font-size: 40px;
-  font-weight: 1200;
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
-  font-style: italic;
-}
-
-.logo-subtitle {
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 15px;
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
-}
-
-.nav-link {
-  font-size: 20px;
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
-}
-
-.header-logo {
-  display: inline-block;
-  vertical-align: top;
-}
-
 /* ===== MAIN CONTENT & BACKGROUND ===== */
 .bg {
-  background-color: #d8e8e2;
+  background-color: var(--background-light);
   padding: 20px 0;
 }
 
 h1 {
-  background-color: #296044;
+  background-color: var(--primary-green);
   text-align: center;
   padding: 20px;
   margin: 30px 0 0 0;
@@ -113,12 +38,10 @@ h1 {
   width: 100%;
 }
 
-.main-title {
-  font-size: 48px;
-}
-
+.main-title,
 .location-title {
   font-size: 48px;
+  text-shadow: var(--shadow-text);
 }
 
 .title {
@@ -144,7 +67,8 @@ h1 {
   height: 200px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-default);
+  transition: transform var(--transition-fast);
 }
 
 .navigation-button:hover {
@@ -172,8 +96,8 @@ h1 {
   width: 350px;
   height: 300px;
   object-fit: cover;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-default);
+  transition: transform var(--transition-fast);
   cursor: pointer;
 }
 
@@ -202,7 +126,7 @@ h1 {
   width: 100px;
   height: 100px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-fast);
 }
 
 .arrows img:hover {
@@ -222,63 +146,52 @@ h1 {
   animation: sweepIn 360ms ease forwards;
 }
 
-/* ===== FOOTER & CREDITS ===== */
-.footer {
-  background-color: #243832;
-  padding: 40px 20px 20px;
-  text-align: center;
+/* ===== SCROLL-TRIGGERED FADE-IN ANIMATIONS ===== */
+
+/* Define the fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Classes for animation */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
-.copyright {
-  font-size: 15px;
-  margin-top: -20px;
-  margin-bottom: 10px;
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.footer-text {
-  font-size: 15px;
-  font-weight: 300;
+/* Hero section should be visible immediately */
+.bg,
+.main-title {
+  opacity: 1;
 }
 
-.group-members {
-  background-color: #28553f;
-  text-align: center;
-  padding: 5px;
-  margin-top: 20px;
+/* Add animation delay for staggered effect */
+.delay-1 {
+  transition-delay: 0.1s;
 }
-
-.group-members p {
-  font-size: 15px;
-  font-weight: 500;
-  margin-top: 10px;
+.delay-2 {
+  transition-delay: 0.2s;
 }
-
-.credits {
-  font-size: 15px;
-  letter-spacing: 3.25px;
-  margin-bottom: 10px;
+.delay-3 {
+  transition-delay: 0.3s;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 
 /* Tablet Styles (max-width: 1024px) */
 @media (max-width: 1024px) {
-  /* Header */
-  .header h2 {
-    font-size: 20px;
-    padding: 12px 15px;
-  }
-
-  .header-nav a {
-    margin-right: 20px;
-    font-size: 16px;
-  }
-
   /* Navigation Thumbnails */
   .navigation-container {
     grid-template-columns: repeat(2, 1fr);
@@ -307,37 +220,6 @@ h1 {
 
 /* Mobile Styles (max-width: 480px) */
 @media (max-width: 480px) {
-  /* Header */
-  .header h2 {
-    font-size: 16px;
-    padding: 8px 10px;
-    display: block;
-  }
-
-  .header-nav {
-    padding: 8px 10px;
-    display: block;
-  }
-
-  .header-nav a {
-    margin-right: 10px;
-    font-size: 12px;
-    display: inline-block;
-    margin: 0 5px;
-  }
-
-  .logo-text {
-    font-size: 24px;
-  }
-
-  .logo-subtitle {
-    font-size: 10px;
-  }
-
-  .nav-link {
-    font-size: 12px;
-  }
-
   /* Navigation Thumbnails */
   .navigation-button {
     width: 160px;
@@ -402,18 +284,5 @@ h1 {
 
   .gallery-main {
     margin-bottom: 5px;
-  }
-
-  /* Footer */
-  .group-members {
-    padding: 1px;
-  }
-
-  .group-members p {
-    font-size: 6px;
-  }
-
-  .footer-text {
-    font-size: 8px;
   }
 }
