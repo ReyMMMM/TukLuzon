@@ -12,9 +12,13 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inria+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="colors.css" />
-    <link rel="stylesheet" href="header-footer.css" />
-    <link rel="stylesheet" href="homepage-styles.css" />
+    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="styles/header-footer.css" />
+    <link rel="stylesheet" href="styles/homepage-styles.css" />
+    <link rel="stylesheet" href="styles/page-transition.css" />
+
+    <script src="scripts/page-transition.js"></script>
+    <script src="scripts/homepage.js" defer></script>
   </head>
   <body>
     <!-- Header -->
@@ -501,77 +505,5 @@
         </p>
       </div>
     </footer>
-
-    <!-- Simple Scroll Animation Script -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Function to check if element is in viewport
-        function isInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return (
-            rect.top <=
-            (window.innerHeight || document.documentElement.clientHeight) * 0.8
-          );
-        }
-
-        // Function to add animation classes
-        function addAnimationClasses() {
-          // Select all sections except hero
-          const sections = document.querySelectorAll(
-            "section:not(.hero-section)"
-          );
-
-          sections.forEach((section) => {
-            if (isInViewport(section)) {
-              section.classList.add("animate-on-scroll", "visible");
-
-              // Add staggered animation to cards within section
-              const cards = section.querySelectorAll(".destination-card");
-              cards.forEach((card, index) => {
-                card.classList.add(
-                  "animate-on-scroll",
-                  "delay-" + ((index % 3) + 1)
-                );
-                card.classList.add("visible");
-              });
-            } else {
-              section.classList.add("animate-on-scroll");
-
-              // Add animation classes to cards but not visible yet
-              const cards = section.querySelectorAll(".destination-card");
-              cards.forEach((card, index) => {
-                card.classList.add(
-                  "animate-on-scroll",
-                  "delay-" + ((index % 3) + 1)
-                );
-              });
-            }
-          });
-
-          // Also animate navigation and subscribe sections
-          const extraSections = document.querySelectorAll(
-            ".navigation-section, .subscribe-section"
-          );
-          extraSections.forEach((section) => {
-            if (isInViewport(section)) {
-              section.classList.add("animate-on-scroll", "visible");
-            } else {
-              section.classList.add("animate-on-scroll");
-            }
-          });
-        }
-
-        // Run on load
-        addAnimationClasses();
-
-        // Run on scroll
-        window.addEventListener("scroll", function () {
-          addAnimationClasses();
-        });
-
-        // Run on resize
-        window.addEventListener("resize", addAnimationClasses);
-      });
-    </script>
   </body>
 </html>
