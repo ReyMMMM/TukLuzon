@@ -1,0 +1,209 @@
+/* about-styles.css - About page specific styles for TukLuzon */
+
+/* Utility Classes */
+.inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 50px 0px 0px;
+}
+
+.space {
+  background-color: var(--background-light);
+  padding: 20px 0;
+}
+
+.title {
+  color: var(--text-color);
+  letter-spacing: 3px;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Title Section */
+.about-title {
+  background-color: var(--primary-green);
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
+  font-size: 48px;
+  width: 100%;
+}
+
+/* Content Section */
+.about-content {
+  background: var(--background-light);
+  padding-top: 40px;
+  padding-bottom: 0px;
+  min-height: 550px;
+}
+
+/* Info Card */
+.info-card {
+  background: var(--primary-green);
+  color: var(--text-color);
+  width: min(880%, 990px);
+  margin: 0 auto;
+  padding: 35px;
+  line-height: 1.6;
+  border: 8px solid var(--dark-green);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.info-card p {
+  text-align: justify;
+  text-indent: 2em;
+}
+
+/* Social Media Icons */
+.social-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 50px;
+  padding-bottom: 0px;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--text-color);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
+  transition: all var(--transition-fast);
+}
+
+.social-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.social-icon:hover {
+  background: var(--accent-green);
+  cursor: pointer;
+}
+
+.social-icon:active {
+  box-shadow: none;
+  background-color: var(--darker-green);
+  transform: translateY(4px);
+}
+
+/* Body background override */
+body {
+  background: var(--dark-green);
+}
+
+/* Desktop Font Sizes */
+.page-title {
+  font-size: 70px;
+  font-weight: 1200;
+  text-shadow: var(--shadow-text);
+}
+
+.info-card {
+  font-size: 22px;
+}
+
+/* ===== SCROLL-TRIGGERED FADE-IN ANIMATIONS ===== */
+
+/* Define the fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes for animation */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title section should be visible immediately */
+.about-title,
+.space {
+  opacity: 1;
+}
+
+/* Add animation delay for staggered effect */
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  /* Content */
+  .info-card {
+    width: 92%;
+    padding: 30px;
+  }
+
+  .title {
+    letter-spacing: 2px;
+  }
+
+  .social-row {
+    gap: 14px;
+    margin: 25px 0 20px;
+  }
+
+  /* Typography */
+  .page-title {
+    font-size: 70px;
+  }
+
+  .info-card {
+    font-size: 20px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Content */
+  .title {
+    font-size: clamp(28px, 12vw, 46px);
+    padding-bottom: 20px;
+  }
+
+  .about-content {
+    padding-top: 20px;
+    padding-bottom: 80px;
+  }
+
+  .about-title {
+    padding: 15px 0px 0px 0px;
+  }
+
+  .info-card {
+    font-size: 18px;
+    padding: 25px;
+  }
+
+  /* Typography */
+  .page-title {
+    font-size: 50px;
+  }
+}
