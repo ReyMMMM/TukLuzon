@@ -196,15 +196,15 @@ body {
   }
 
   .header-nav {
-    padding: 8px 10px;
+    padding: 0px 10px;
     display: block;
   }
 
   .header-nav a {
     margin-right: 10px;
-    font-size: 12px;
+    font-size: 8px;
     display: inline-block;
-    margin: 0 5px;
+    margin: 7px 3px;
   }
 
   .header .header-logo {
@@ -234,10 +234,6 @@ body {
     font-size: 7px;
     margin-left: -5px;
     margin-bottom: 6px;
-  }
-
-  .nav-link {
-    font-size: 12px;
   }
 
   .group-members {
