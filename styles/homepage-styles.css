@@ -43,6 +43,7 @@
 .hero-upper {
   background-color: rgba(41, 96, 68, 0.6);
   position: relative;
+  margin-top: 100px;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
@@ -777,21 +778,22 @@
   }
 
   /* Hero mobile adjustments */
+
   .hero-section {
     height: auto;
-    min-height: 100vh;
+    min-height: 500px;
     padding: 20px;
   }
 
   .hero-container {
     padding: 0;
     margin-top: -100px;
-    margin-bottom: 10px;
+    margin-bottom: 150px;
     max-width: 100%;
   }
 
   .hero-upper {
-    min-height: 150px;
+    min-height: 100px;
     padding: 20px 0;
     margin-left: -50vw;
     margin-right: -50vw;
