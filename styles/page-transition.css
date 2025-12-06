@@ -1,5 +1,3 @@
-/* minimal-transition.css - Smooth fade transition keeping header visible */
-
 /* Transition overlay - only covers content area */
 .transition-overlay {
   position: fixed;

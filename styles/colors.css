@@ -1,4 +1,3 @@
-/* colors.css - Color variables for TukLuzon */
 :root {
   /* Main Color Palette */
   --primary-green: #296044;
@@ -8,7 +7,7 @@
   --accent-green: #367a56;
   --darker-green: #2c5d43;
   --background-light: #d8e8e2;
-  --background-transparent: rgba(50, 115, 78, 0.8);
+  --background-colored: #5b8f71;
   --white: #ffffff;
   --light-text: #d8e8e2;
   --black: #000000;

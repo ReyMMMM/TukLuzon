@@ -1,9 +1,7 @@
-/* homepage-styles.css - Homepage specific styles for TukLuzon */
 :root {
   scroll-behavior: smooth;
 }
 
-/* Container for consistent width */
 .container {
   width: 100%;
   max-width: 1440px;
@@ -58,7 +56,7 @@
   text-align: center;
 }
 
-/* Hero lower content with two columns */
+/* Hero lower content with two columns for desktop/mobile */
 .hero-lower {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -143,13 +141,15 @@
   margin-bottom: -50px;
 }
 
+/* Specific padding for Mt. Pulag section (bc fun facts part of cards) */
 .section-mt-pulag .destination-card-buttons {
   padding: 20px 0px;
 }
 
+/* Section background colors for transparent sections */
 .section-mt-pulag,
 .section-vigan {
-  background-color: var(--background-transparent);
+  background-color: var(--background-colored);
   margin-bottom: -50px;
 }
 
@@ -169,8 +169,7 @@
   background-color: var(--section-bg);
   box-shadow: var(--shadow-default);
   text-align: center;
-
-  font-size: 39px;
+  font-size: 40px;
   margin: 0px auto 40px auto;
 }
 
@@ -181,6 +180,8 @@
 }
 
 /* Different grid layouts for sections */
+
+/* Default grid layout */
 .destination-grid {
   display: grid;
   grid-template-columns: 200px 1fr 1fr;
@@ -188,6 +189,7 @@
   margin-bottom: 10px;
 }
 
+/* Grid layout variant for Mt. Pulag and Vigan */
 .destination-grid-2 {
   display: grid;
   grid-template-columns: 1fr 300px 200px;
@@ -195,6 +197,7 @@
   margin-bottom: 10px;
 }
 
+/* Grid layout variant for routes-tips/history/location PULAG*/
 .destination-grid-3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -206,6 +209,7 @@
   display: none;
 }
 
+/* Grid layout variant for Sagada */
 .destination-grid-4 {
   display: grid;
   grid-template-columns: 200px 1fr 1fr 1fr;
@@ -223,6 +227,7 @@
   overflow: hidden;
 }
 
+/* Button container inside cards */
 .destination-card-buttons {
   display: flex;
   flex-direction: column;
@@ -231,7 +236,7 @@
   padding: 10px;
 }
 
-/* Card variant for button containers */
+/* Card variant for button containers in grid3 PULAG */
 .destination-card-alt {
   display: flex;
   flex-direction: row;
@@ -241,7 +246,7 @@
   overflow: hidden;
 }
 
-/* Destination images */
+/* Destination images Default */
 .destination-image {
   width: 95%;
   height: 300px;
@@ -251,6 +256,7 @@
   transition: transform var(--transition-fast);
 }
 
+/* Destination Images for Mt. Pulag and Vigan */
 .destination-image-alt {
   width: 90%;
   height: 100%;
@@ -267,7 +273,7 @@
   transform: scale(1.01);
 }
 
-/* More buttons styling */
+/* Buttons styling */
 .info-button {
   background-color: var(--section-content);
   margin: 20px;
@@ -396,8 +402,9 @@
   font-size: 18px;
 }
 
+/* Subscribe Section Styles */
 .subscribe-section {
-  background-color: var(--background-transparent);
+  background-color: var(--background-colored);
   padding: 80px 20px;
   text-align: center;
 }
@@ -471,6 +478,7 @@
   transform: translateY(2px);
 }
 
+/* Navigation Buttons Section Between Locations */
 .navigation-container {
   display: flex;
   justify-content: center;
@@ -510,18 +518,19 @@
   margin-bottom: 20px;
 }
 
+/* Remove box-shadow from subtitles in Vigan and Mt. Pulag sections (For unneeded floating shadows)*/
 .section-vigan .container .section-subtitle,
 .section-mt-pulag .container .section-subtitle {
   box-shadow: none;
 }
 
-/* ===== SCROLL-TRIGGERED FADE-IN ANIMATIONS - INSTANT TRIGGER ===== */
+/* ===== SCROLL-TRIGGERED FADE-IN ANIMATIONS ===== */
 
-/* Define the fade-in-up animation - VERY FAST */
+/* Define the fade-in-up animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(15px); /* Smaller movement */
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -529,7 +538,7 @@
   }
 }
 
-/* Classes for animation - INSTANT TRIGGER */
+/* Classes for animation */
 .animate-on-scroll {
   opacity: 0;
   animation: fadeInUp 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -562,7 +571,7 @@
   opacity: 1 !important;
 }
 
-/* ===== DESKTOP MEDIA QUERY (769px - 1024px) ===== */
+/* ===== DESKTOP MEDIA QUERY ===== */
 @media (max-width: 1024px) {
   .container {
     padding: 0px 40px;
@@ -692,7 +701,7 @@
     font-size: 16px;
   }
 
-  /* Facts grid for mobile */
+  /* Facts grids */
   .facts-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -752,7 +761,7 @@
   }
 }
 
-/* ===== MOBILE MEDIA QUERY (max-width: 480px) ===== */
+/* ===== MOBILE MEDIA QUERY ===== */
 @media (max-width: 480px) {
   /* Section adjustments */
   .section-hundred-islands,
@@ -839,7 +848,6 @@
     margin-top: 20px;
   }
 
-  /* Section title mobile */
   .section-title {
     padding: 5px;
     font-size: 25px;
@@ -853,7 +861,7 @@
     grid-template-columns: 1fr;
   }
 
-  /* Mobile item ordering */
+  /* Mobile item ordering to fix grid items */
   .grid-item-1 {
     order: 1;
   }
@@ -873,7 +881,11 @@
     margin: 0px;
   }
 
-  /* Mobile-specific grid display rules */
+  /*
+  Mobile-specific grid display rules 
+  Used to hide/show specific grid items in sections
+  For structure adjustments
+  */
   .destination-grid-2 .grid-item-3 {
     display: none;
   }

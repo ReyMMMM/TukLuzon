@@ -1,5 +1,3 @@
-/* gallery-styles.css - Gallery page specific styles for TukLuzon */
-
 /* ===== ANIMATIONS ===== */
 @keyframes sweepOut {
   0% {
@@ -139,7 +137,6 @@ h1 {
 
 /* Navigation button active state */
 .navigation-button.active {
-  border: 3px solid var(--light-green);
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(72, 147, 109, 0.5);
 }
