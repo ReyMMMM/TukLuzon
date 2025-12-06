@@ -1,4 +1,3 @@
-
 // lightbox.js - Image lightbox functionality for TukLuzon
 
 class Lightbox {
@@ -26,7 +25,7 @@ class Lightbox {
     // Add event listeners
     this.addEventListeners();
     
-    // Initialize click events on all images (excluding navigation-section)
+    // Initialize click events on all images
     this.initializeImageClicks();
   }
 
@@ -91,10 +90,9 @@ class Lightbox {
     });
   }
 
-  // Initialize click events on all images (excluding navigation-section)
+  // Initialize click events on all images
   initializeImageClicks() {
     // Select all images that should be clickable
-    // EXCLUDING navigation-section images
     const clickableImages = [
       '.img-box img',
       '.destination-image',
@@ -104,44 +102,64 @@ class Lightbox {
       '.info-button img:not(.icon-history):not(.icon-location)'
     ];
     
-    // Wait a bit for dynamic content to load (especially for gallery)
+    // Wait a bit for dynamic content to load
     setTimeout(() => {
-      clickableImages.forEach(selector => {
-        const images = document.querySelectorAll(selector);
-        images.forEach((img, index) => {
-          // Check if image is inside navigation-section and skip it
-          if (img.closest('.navigation-section')) {
-            return; // Skip navigation-section images
-          }
-          
-          img.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // Get all images on the current page (excluding navigation-section)
-            this.collectPageImages();
-            
-            // Find the clicked image index
-            const clickedIndex = Array.from(this.currentPageImages).findIndex(
-              pageImg => pageImg.src === img.src
-            );
-            
-            if (clickedIndex !== -1) {
-              this.openLightbox(clickedIndex);
-            }
-          });
-        });
-      });
-    }, 500);
+      this.setupImageClickEvents();
+    }, 100);
   }
 
-  // Collect all images on the current page (excluding navigation-section)
-  collectPageImages() {
+  // Setup click events for images (can be called multiple times for dynamic content)
+  setupImageClickEvents() {
     const selectors = [
+      '.gallery-container img',
       '.img-box img',
       '.destination-image',
       '.destination-image-alt',
+      '.destination-card img:not(.icon-history):not(.icon-location)'
+    ];
+    
+    selectors.forEach(selector => {
+      const images = document.querySelectorAll(selector);
+      images.forEach((img, index) => {
+        // Check if image is inside navigation-section and skip it
+        if (img.closest('.navigation-section') || img.closest('.navigation-container')) {
+          return; // Skip navigation thumbnails
+        }
+        
+        // Remove any existing click event to avoid duplicates
+        img.removeEventListener('click', this.handleImageClick);
+        
+        // Add new click event
+        img.addEventListener('click', (e) => this.handleImageClick(e, img));
+      });
+    });
+  }
+
+  // Handle image click
+  handleImageClick(e, clickedImg) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Get all images on the current page (excluding navigation thumbnails)
+    this.collectPageImages();
+    
+    // Find the clicked image index
+    const clickedIndex = Array.from(this.currentPageImages).findIndex(
+      pageImg => pageImg.src === clickedImg.src
+    );
+    
+    if (clickedIndex !== -1) {
+      this.openLightbox(clickedIndex);
+    }
+  }
+
+  // Collect all images on the current page (excluding navigation thumbnails)
+  collectPageImages() {
+    const selectors = [
       '.gallery-container img',
+      '.img-box img',
+      '.destination-image',
+      '.destination-image-alt',
       '.destination-card img:not(.icon-history):not(.icon-location)'
     ];
     
@@ -151,8 +169,8 @@ class Lightbox {
     selectors.forEach(selector => {
       const images = document.querySelectorAll(selector);
       images.forEach(img => {
-        // Skip navigation-section images
-        if (img.closest('.navigation-section')) {
+        // Skip navigation thumbnails
+        if (img.closest('.navigation-section') || img.closest('.navigation-container')) {
           return;
         }
         
@@ -249,7 +267,28 @@ document.addEventListener('DOMContentLoaded', () => {
   window.imageLightbox = new Lightbox();
 });
 
-// For gallery page with dynamic content
+// Hook into the gallery.js functions to re-attach click events after gallery changes
+if (typeof loadGallery !== 'undefined') {
+  // Store the original loadGallery function
+  const originalLoadGallery = loadGallery;
+  
+  // Override the loadGallery function to re-attach lightbox events
+  window.loadGallery = async function(galleryKey, isInitial = false) {
+    // Call the original function
+    const result = await originalLoadGallery.call(this, galleryKey, isInitial);
+    
+    // After the gallery images are updated, re-attach lightbox click events
+    setTimeout(() => {
+      if (window.imageLightbox) {
+        window.imageLightbox.setupImageClickEvents();
+      }
+    }, 200); // Wait for the fade-in animation to complete
+    
+    return result;
+  };
+}
+
+// Also hook into initGallery if it exists
 if (typeof initGallery !== 'undefined') {
   const originalInitGallery = initGallery;
   window.initGallery = function() {
@@ -258,8 +297,45 @@ if (typeof initGallery !== 'undefined') {
     // Re-initialize lightbox for dynamically loaded gallery images
     setTimeout(() => {
       if (window.imageLightbox) {
-        window.imageLightbox.initializeImageClicks();
+        window.imageLightbox.setupImageClickEvents();
       }
-    }, 100);
+    }, 300);
   };
 }
+
+// Monitor for gallery changes (for arrow clicks and navigation button clicks)
+document.addEventListener('click', function(e) {
+  // Check if arrow buttons were clicked
+  if (e.target.id === 'arrowPrev' || e.target.id === 'arrowNext' || 
+      e.target.closest('#arrowPrev') || e.target.closest('#arrowNext')) {
+    // Wait for gallery to update, then re-attach lightbox events
+    setTimeout(() => {
+      if (window.imageLightbox) {
+        window.imageLightbox.setupImageClickEvents();
+      }
+    }, 400);
+  }
+  
+  // Check if navigation buttons were clicked
+  if (e.target.closest('.navigation-button')) {
+    setTimeout(() => {
+      if (window.imageLightbox) {
+        window.imageLightbox.setupImageClickEvents();
+      }
+    }, 400);
+  }
+});
+
+// Also listen for keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+    // Check if we're on the gallery page (has gallery container)
+    if (document.querySelector('.gallery-container')) {
+      setTimeout(() => {
+        if (window.imageLightbox) {
+          window.imageLightbox.setupImageClickEvents();
+        }
+      }, 400);
+    }
+  }
+});

@@ -23,7 +23,7 @@ body {
 
 .header h2 {
   margin: 0;
-  padding: 10px 20px;
+  padding: 10px 0px;
   font-size: 24px;
   display: inline-block;
   vertical-align: top;
@@ -34,6 +34,7 @@ body {
   vertical-align: top;
   color: var(--text-color);
   text-decoration: none;
+  padding: 0px;
 }
 
 .header-nav {
@@ -66,12 +67,22 @@ body {
   opacity: 0.8;
 }
 
+.logo-image {
+  height: 50px;
+  width: auto;
+  vertical-align: middle;
+  margin: 10px 0px 10px 10px;
+}
+
 /* Logo styles */
 .logo-text {
   font-size: 40px;
-  font-weight: 1200;
+  font-weight: 100;
   text-shadow: var(--shadow-text);
-  font-style: italic;
+}
+
+.logo-text2 {
+  font-weight: 700;
 }
 
 .logo-subtitle {
