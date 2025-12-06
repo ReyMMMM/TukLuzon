@@ -31,7 +31,7 @@
       rgba(255, 255, 255, 0) 70%,
       var(--background-light) 95%
     ),
-    url("../images/homepageBackground/hpBG.png") center/cover no-repeat;
+    url("/images/homepageBackground/hpBG.png") center/cover no-repeat;
   z-index: -1;
 }
 
@@ -143,6 +143,10 @@
   margin-bottom: -50px;
 }
 
+.section-mt-pulag .destination-card-buttons {
+  padding: 20px 0px;
+}
+
 .section-mt-pulag,
 .section-vigan {
   background-color: var(--background-transparent);
@@ -165,6 +169,7 @@
   background-color: var(--section-bg);
   box-shadow: var(--shadow-default);
   text-align: center;
+  justify-self: center;
   font-size: 39px;
   margin: 0px auto 40px auto;
 }
@@ -268,9 +273,11 @@
   margin: 20px;
   padding: 20px;
   width: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   box-shadow: var(--shadow-default);
   border-radius: 5px;
@@ -899,7 +906,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
-    padding: 5px;
+    padding: 10px;
   }
 
   /* Image sizing for mobile */
@@ -911,7 +918,8 @@
 
   /* Button adjustments for mobile */
   .info-button {
-    margin: 7px;
+    justify-self: center;
+    margin: 0px;
     padding: 0px;
   }
 
@@ -1024,4 +1032,3 @@
     font-size: 10px;
   }
 }
-
