@@ -267,13 +267,10 @@
   background-color: var(--section-content);
   margin: 20px;
   padding: 20px;
-  width: 100%;
-  flex: 1;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   cursor: pointer;
   box-shadow: var(--shadow-default);
   border-radius: 5px;
@@ -906,7 +903,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
-    padding-right: 20px;
+    padding: 5px;
   }
 
   /* Image sizing for mobile */
@@ -964,7 +961,7 @@
   }
   .section-subtitle {
     font-size: 20px;
-    padding: 5px;
+    padding: 10px;
     margin: 0px 0px;
     border-radius: 10px;
   }
@@ -980,7 +977,8 @@
   .facts-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2px;
+    gap: 6px;
+    padding: 2px;
     overflow: hidden;
   }
 
@@ -990,24 +988,31 @@
 
   .fact-item,
   .fact-item-alt {
-    margin: 10px;
+    margin: 5px;
     padding: 15px;
+    margin-left: -1px;
+    margin-right: -1px;
   }
 
   /* Navigation mobile adjustments */
+  .navigation-container {
+    overflow: hidden;
+    gap: 10px;
+  }
+
   .navigation-section {
     padding: 0px 20px;
     margin-top: -50px;
   }
 
   .navigation-button {
-    width: 150px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
   }
 
   .navigation-button img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
   }
 
   /* Subscribe section mobile */

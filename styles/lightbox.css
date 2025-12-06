@@ -165,8 +165,3 @@
 .navigation-button img {
   cursor: default !important;
 }
-
-.navigation-section img:hover,
-.navigation-button img:hover {
-  transform: none !important;
-}
