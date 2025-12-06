@@ -891,12 +891,8 @@
     display: block;
   }
 
-  .section-mt-pulag .info-button {
-    transform: translate(-11px);
-  }
-
-  .section-mt-pulag .facts-grid-2 {
-    transform: translate(11px, -10px);
+  .section-mt-pulag .container .section-subtitle {
+    padding: 0px;
   }
 
   .destination-card-buttons {
@@ -915,7 +911,7 @@
 
   /* Button adjustments for mobile */
   .info-button {
-    margin: 10px;
+    margin: 7px;
     padding: 0px;
   }
 
@@ -978,7 +974,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 6px;
-    padding: 2px;
     overflow: hidden;
   }
 
@@ -989,7 +984,7 @@
   .fact-item,
   .fact-item-alt {
     margin: 5px;
-    padding: 15px;
+    padding: 10px;
     margin-left: -1px;
     margin-right: -1px;
   }

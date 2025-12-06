@@ -33,6 +33,7 @@ body {
   display: inline-block;
   vertical-align: top;
   color: var(--text-color);
+  text-decoration: none;
 }
 
 .header-nav {
@@ -169,6 +170,7 @@ body {
 
   .credits {
     font-size: 12px;
+    letter-spacing: 1px;
   }
 }
 
