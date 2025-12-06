@@ -169,7 +169,7 @@
   background-color: var(--section-bg);
   box-shadow: var(--shadow-default);
   text-align: center;
-  justify-self: center;
+
   font-size: 39px;
   margin: 0px auto 40px auto;
 }
@@ -968,6 +968,7 @@
     padding: 10px;
     margin: 0px 0px;
     border-radius: 10px;
+    justify-self: center;
   }
 
   .section-subtitle p {
