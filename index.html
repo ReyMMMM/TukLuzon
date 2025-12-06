@@ -16,17 +16,21 @@
     <link rel="stylesheet" href="styles/header-footer.css" />
     <link rel="stylesheet" href="styles/homepage-styles.css" />
     <link rel="stylesheet" href="styles/page-transition.css" />
+    <link rel="stylesheet" href="styles/lightbox.css" />
 
     <script src="scripts/page-transition.js"></script>
     <script src="scripts/homepage.js" defer></script>
+    <script src="scripts/lightbox.js" defer></script>
   </head>
   <body>
     <!-- Header -->
-    <header class="header">
-      <h2 class="header-logo">
-        <span class="logo-text">TukLuzon</span>
-        <span class="logo-subtitle"> | TRAVEL BLOG</span>
-      </h2>
+    <header id="header" class="header">
+      <a class="header-logo" href="index.html">
+        <h2 href="" class="header-logo">
+          <span class="logo-text">TukLuzon</span>
+          <span class="logo-subtitle"> | TRAVEL BLOG</span>
+        </h2>
+      </a>
       <nav class="header-nav">
         <a href="#" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
@@ -59,14 +63,17 @@
               Lets start our journey in Luzon where mountains meet heritage and
               beaches sparkle under the sun
             </p>
-            <a href="#" class="cta-button">Get Started</a>
+            <a href="#hundred-islands" class="cta-button">Get Started</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Hundred Islands Section -->
-    <section class="destination-section section-hundred-islands">
+    <section
+      id="hundred-islands"
+      class="destination-section section-hundred-islands"
+    >
       <div class="container">
         <h2 class="section-title">HUNDRED ISLANDS</h2>
 
@@ -91,7 +98,7 @@
           </div>
           <div class="destination-card grid-item-1">
             <img
-              src="images/hundredislands/hundredislands.png"
+              src="images/hundredislands/hundredislands.jpeg"
               alt="Hundred Islands"
               class="destination-image"
             />
@@ -151,7 +158,7 @@
     </section>
 
     <!-- Mt. Pulag Section -->
-    <section class="destination-section section-mt-pulag">
+    <section id="mt-pulag" class="destination-section section-mt-pulag">
       <div class="container">
         <h2 class="section-title">MT. PULAG (BENGUET)</h2>
 
@@ -247,7 +254,10 @@
     </section>
 
     <!-- Sagada Sumaguing Cave Section -->
-    <section class="destination-section section-sumaguing-cave">
+    <section
+      id="sumaguing-cave"
+      class="destination-section section-sumaguing-cave"
+    >
       <div class="container">
         <h2 class="section-title">SAGADA SUMAGUING CAVE</h2>
 
@@ -324,7 +334,7 @@
     </section>
 
     <!-- Vigan Section -->
-    <section class="destination-section section-vigan">
+    <section id="vigan" class="destination-section section-vigan">
       <div class="container">
         <h2 class="section-title">VIGAN</h2>
 
@@ -441,24 +451,28 @@
     <!-- Navigation Section -->
     <section class="navigation-section">
       <div class="navigation-container">
-        <div class="navigation-button">
-          <img
-            src="images/hundredislands/hundredislands.png"
-            alt="Hundred Islands"
-          />
-        </div>
-        <div class="navigation-button">
-          <img src="images/mtpulag/mtpulag.png" alt="Mt. Pulag" />
-        </div>
-        <div class="navigation-button">
-          <img
-            src="images/sumaguingcave/sumaguing.png"
-            alt="Sagada Sumaguing Cave"
-          />
-        </div>
-        <div class="navigation-button">
-          <img src="images/vigan/vigan.png" alt="Vigan" />
-        </div>
+        <a href="#hundred-islands"
+          ><div class="navigation-button">
+            <img
+              src="images/hundredislands/hundredislands.jpeg"
+              alt="Hundred Islands"
+            /></div
+        ></a>
+        <a href="#mt-pulag"
+          ><div class="navigation-button">
+            <img src="images/mtpulag/mtpulag.png" alt="Mt. Pulag" /></div
+        ></a>
+        <a href="#sumaguing-cave"
+          ><div class="navigation-button">
+            <img
+              src="images/sumaguingcave/sumaguing.png"
+              alt="Sagada Sumaguing Cave"
+            /></div
+        ></a>
+        <a href="#vigan"
+          ><div class="navigation-button">
+            <img src="images/vigan/vigan.png" alt="Vigan" /></div
+        ></a>
       </div>
       <p class="navigation-motivation">
         This is just the beginning of your Luzon adventure — more awaits across
@@ -497,7 +511,9 @@
     </div>
     <footer class="footer">
       <div class="footer-content">
-        <p class="copyright">©TukLuzon 2025</p>
+        <p class="copyright">
+          <a class="copyright" href="#header">©TukLuzon 2025</a>
+        </p>
 
         <p class="footer-text">
           © 2025 TukLuzon. All Rights Reserved. | Discovering Luzon, one

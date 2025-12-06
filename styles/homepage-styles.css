@@ -166,7 +166,7 @@
   box-shadow: var(--shadow-default);
   text-align: center;
   font-size: 39px;
-  margin: 40px auto;
+  margin: 0px auto 40px auto;
 }
 
 .section-subtitle p {
@@ -241,7 +241,7 @@
   width: 95%;
   height: 300px;
   object-fit: cover;
-  border: 2px solid var(--black);
+  border: 0px solid var(--black);
   margin: 10px;
   transition: transform var(--transition-fast);
 }
@@ -281,7 +281,7 @@
 }
 
 .info-button:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px) !important;
   background-color: var(--cta-hover);
 }
 
@@ -371,7 +371,7 @@
 /* Fact item hover effects */
 .fact-item:hover,
 .fact-item-alt:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px) !important;
   background-color: var(--cta-hover);
 }
 
@@ -478,23 +478,22 @@
   padding: 0px 100px;
 }
 
-.navigation-button {
+.navigation-button img {
   width: 300px;
   height: 200px;
   overflow: hidden;
+  object-fit: cover;
   box-shadow: var(--shadow-default);
   cursor: pointer;
   transition: transform var(--transition-fast);
 }
 
-.navigation-button:hover {
+.navigation-button img:hover {
   transform: scale(1.05);
 }
 
-.navigation-button img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
+.navigation-button img:active {
+  transform: scale(0.98);
 }
 
 .navigation-motivation {
@@ -624,7 +623,7 @@
 
   .section-subtitle {
     font-size: 32px;
-    margin: 30px auto;
+    margin: 0px auto 30px auto;
   }
 
   .section-subtitle p {

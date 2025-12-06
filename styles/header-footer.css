@@ -32,6 +32,7 @@ body {
 .header-logo {
   display: inline-block;
   vertical-align: top;
+  color: var(--text-color);
 }
 
 .header-nav {
@@ -111,6 +112,8 @@ body {
   font-size: 15px;
   margin-top: -20px;
   margin-bottom: 10px;
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 .credits {
@@ -206,7 +209,7 @@ body {
   }
 
   .group-members p {
-    font-size: 6px;
+    font-size: 4px;
   }
 
   .footer-text {
