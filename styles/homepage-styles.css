@@ -193,7 +193,7 @@
 /* Grid layout variant for Mt. Pulag and Vigan */
 .destination-grid-2 {
   display: grid;
-  grid-template-columns: 1fr 300px 200px;
+  grid-template-columns: 1fr 280px 250px;
   gap: 10px;
   margin-bottom: 10px;
 }
@@ -216,6 +216,10 @@
   grid-template-columns: 200px 1fr 1fr 1fr;
   gap: 10px;
   margin-bottom: 10px;
+}
+
+.section-vigan .destination-grid {
+  grid-template-columns: 300px 1fr 1fr;
 }
 
 /* Base card styling */
@@ -335,7 +339,7 @@
   text-align: center;
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin: 10px 10px 20px 10px;
 }
 
 .destination-description {
@@ -644,19 +648,24 @@
     padding: 15px;
   }
 
-  /* Tablet grid adjustments */
+  /* Grid adjustments */
   .destination-grid {
-    grid-template-columns: 180px 1fr 1fr;
+    grid-template-columns: 150px 1fr 1fr;
     gap: 8px;
   }
 
   .destination-grid-2 {
-    grid-template-columns: 1fr 250px 180px;
+    grid-template-columns: 1fr 200px 150px;
+    gap: 8px;
+  }
+
+  .section-vigan .destination-grid {
+    grid-template-columns: 150px 1fr 1fr;
     gap: 8px;
   }
 
   .destination-grid-4 {
-    grid-template-columns: 180px 1fr 1fr 1fr;
+    grid-template-columns: 100px 1fr 1fr 1fr;
     gap: 8px;
   }
 
@@ -726,12 +735,12 @@
   }
 
   .navigation-button {
-    width: 200px;
+    width: 120px;
     height: 140px;
   }
 
   .navigation-button img {
-    width: 200px;
+    width: 120px;
     height: 140px;
   }
 
@@ -903,6 +912,10 @@
 
   .section-vigan .destination-grid .grid-item-3 {
     display: grid;
+  }
+
+  .section-vigan .destination-grid {
+    grid-template-columns: 1fr;
   }
 
   .section-vigan .destination-grid .grid-item-4 {
