@@ -222,6 +222,10 @@
   grid-template-columns: 300px 1fr 1fr;
 }
 
+.section-vigan .section-subtitle-vigan {
+  display: none;
+}
+
 /* Base card styling */
 .destination-card {
   display: flex;
