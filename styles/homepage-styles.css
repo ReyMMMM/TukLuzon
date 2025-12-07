@@ -989,7 +989,7 @@
 
   .destination-content {
     margin: 10px;
-    padding: 10px;
+    padding: 10px 20px 20px 20px;
   }
   .section-subtitle {
     font-size: 20px;
