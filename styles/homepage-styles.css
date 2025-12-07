@@ -43,7 +43,7 @@
 .hero-upper {
   background-color: rgba(41, 96, 68, 0.6);
   position: relative;
-  margin-top: 100px;
+  margin-top: 0px;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
@@ -793,6 +793,7 @@
   }
 
   .hero-upper {
+    margin-top: 150px;
     min-height: 100px;
     padding: 20px 0;
     margin-left: -50vw;
