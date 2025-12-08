@@ -20,6 +20,9 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inria+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="icon" href="images/homepageBackground/logo.png" />
     <link rel="stylesheet" href="styles/colors.css" />
     <link rel="stylesheet" href="styles/header-footer.css" />
@@ -30,6 +33,7 @@
     <script src="scripts/page-transition.js"></script>
     <script src="scripts/homepage.js" defer></script>
     <script src="scripts/lightbox.js" defer></script>
+    <script src="scripts/pop-ups.js" defer></script>
   </head>
   <body>
     <!-- Header -->
@@ -97,14 +101,16 @@
         <div class="destination-grid">
           <div class="destination-card destination-card-buttons grid-item-3">
             <div class="info-button">
-              <img
+              <a target="_blank" href="https://www.google.com/maps/place/Hundred+Islands/@16.2057864,120.0113353,6690m/data=!3m1!1e3!4m10!1m2!2m1!1shundred+islands+pangasinan!3m6!1s0x3393db5fbdaaaaab:0x8f1c62665ee0a632!8m2!3d16.2005045!4d120.0376376!15sChpodW5kcmVkIGlzbGFuZHMgcGFuZ2FzaW5hbpIBDW5hdGlvbmFsX3BhcmvgAQA!16zL20vMDRucmR5?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D">
+                <img
                 src="images/homepageBackground/location_icon.png"
                 alt="Location Image"
                 class="icon-location"
-              />
+                />
+              </a>
               <p class="button-text">Location</p>
             </div>
-            <div class="info-button">
+            <div class="info-button history hundred-islands">
               <img
                 src="images/homepageBackground/history.png"
                 alt="History Image"
@@ -155,17 +161,17 @@
           <p>FUN FACTS</p>
 
           <div class="facts-grid">
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="0">
               <div class="fact-number">1</div>
               <div class="fact-text">
                 Interesting fact about Hundred Islands
               </div>
             </div>
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="1">
               <div class="fact-number">2</div>
               <div class="fact-text">Another interesting fact</div>
             </div>
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="2">
               <div class="fact-number">3</div>
               <div class="fact-text">One more fascinating detail</div>
             </div>
@@ -202,15 +208,15 @@
           <div class="destination-card destination-card-buttons grid-item-3">
             <div class="section-subtitle"><p>FUN FACTS</p></div>
             <div class="facts-grid-2">
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="3">
                 <div class="fact-number">1</div>
                 <div class="fact-text">Interesting fact about Mt. Pulag</div>
               </div>
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="4">
                 <div class="fact-number">2</div>
                 <div class="fact-text">Another interesting fact</div>
               </div>
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="5">
                 <div class="fact-number">3</div>
                 <div class="fact-text">One more fascinating detail</div>
               </div>
@@ -222,14 +228,16 @@
             class="destination-card-alt destination-card-buttons grid-item-2"
           >
             <div class="info-button">
-              <img
+              <a target="_blank" href="https://www.google.com/maps/place/Mount+Pulag/@16.5974994,120.8888668,3338m/data=!3m2!1e3!4b1!4m6!3m5!1s0x33904accf133372f:0xa20b501379e7d400!8m2!3d16.5975!4d120.8991666!16zL20vMDF0MzVf?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D">
+                <img
                 src="images/homepageBackground/location_icon.png"
                 alt="Location Image"
                 class="icon-location"
-              />
+                />
+              </a>
               <p class="button-text">Location</p>
             </div>
-            <div class="info-button">
+            <div class="info-button history mt-pulag">
               <img
                 src="images/homepageBackground/history.png"
                 alt="History Image"
@@ -252,15 +260,15 @@
           <div class="destination-card destination-card-buttons grid-item-3">
             <div class="section-subtitle"><p>FUN FACTS</p></div>
             <div class="facts-grid-2">
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="3">
                 <div class="fact-number">1</div>
                 <div class="fact-text">Interesting fact about Mt. Pulag</div>
               </div>
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="4">
                 <div class="fact-number">2</div>
                 <div class="fact-text">Another interesting fact</div>
               </div>
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="5">
                 <div class="fact-number">3</div>
                 <div class="fact-text">One more fascinating detail</div>
               </div>
@@ -281,14 +289,16 @@
         <div class="destination-grid-4">
           <div class="destination-card destination-card-buttons grid-item-4">
             <div class="info-button">
-              <img
+              <a target="_blank" href="https://www.google.com/maps/place/Sumaguing+Cave/@17.065718,120.9003351,833m/data=!3m2!1e3!4b1!4m6!3m5!1s0x338fd32df3c00a55:0xf66eabeb16f33737!8m2!3d17.065718!4d120.90291!16s%2Fg%2F1td9y69b?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D">
+                <img
                 src="images/homepageBackground/location_icon.png"
                 alt="Location Image"
                 class="icon-location"
-              />
+                />
+              </a>
               <p class="button-text">Location</p>
             </div>
-            <div class="info-button">
+            <div class="info-button history sagada">
               <img
                 src="images/homepageBackground/history.png"
                 alt="History Image"
@@ -333,15 +343,15 @@
           <p>FUN FACTS</p>
 
           <div class="facts-grid">
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="6">
               <div class="fact-number">1</div>
               <div class="fact-text">Interesting fact about Sumaguing Cave</div>
             </div>
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="7">
               <div class="fact-number">2</div>
               <div class="fact-text">Another interesting fact</div>
             </div>
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="8">
               <div class="fact-number">3</div>
               <div class="fact-text">One more fascinating detail</div>
             </div>
@@ -381,15 +391,15 @@
           <div class="destination-card destination-card-buttons grid-item-3">
             <div class="section-subtitle"><p>FUN FACTS</p></div>
             <div class="facts-grid-2">
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="9">
                 <div class="fact-number">1</div>
                 <div class="fact-text">Interesting fact about Vigan</div>
               </div>
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="10">
                 <div class="fact-number">2</div>
                 <div class="fact-text">Another interesting fact</div>
               </div>
-              <div class="fact-item-alt">
+              <div class="fact-item-alt fact-button" data-fact="11">
                 <div class="fact-number">3</div>
                 <div class="fact-text">One more fascinating detail</div>
               </div>
@@ -401,14 +411,16 @@
         <div class="destination-grid">
           <div class="destination-card destination-card-buttons grid-item-3">
             <div class="info-button">
-              <img
+              <a target="_blank" href="https://www.google.com/maps/place/Vigan+Heritage+Site/@17.5712226,120.3874197,415m/data=!3m2!1e3!4b1!4m6!3m5!1s0x338e65761560fb2d:0xbf0c1f3747c0f31b!8m2!3d17.5712226!4d120.3887072!16s%2Fg%2F11f542xx3h?authuser=0&entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D">
+                <img
                 src="images/homepageBackground/location_icon.png"
                 alt="Location Image"
                 class="icon-location"
-              />
+                />
+              </a>
               <p class="button-text">Location</p>
             </div>
-            <div class="info-button">
+            <div class="info-button trivia">
               <img
                 src="images/homepageBackground/trivia_icon.png"
                 alt="Trivia Image"
@@ -445,18 +457,18 @@
         </div>
 
         <!-- Fun Facts section -->
-        <div class="section-subtitle">
+        <div class="section-subtitle forVigan">
           <p>FUN FACTS</p>
           <div class="facts-grid">
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="9">
               <div class="fact-number">1</div>
               <div class="fact-text">Interesting fact about Vigan</div>
             </div>
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="10">
               <div class="fact-number">2</div>
               <div class="fact-text">Another interesting fact</div>
             </div>
-            <div class="fact-item">
+            <div class="fact-item fact-button" data-fact="11">
               <div class="fact-number">3</div>
               <div class="fact-text">One more fascinating detail</div>
             </div>
@@ -519,6 +531,285 @@
         </form>
       </div>
     </section>
+
+    <!-- Background dimmer when a pop-up is open -->
+    <div class="bg-dimmer"></div>
+
+    <!-- History and Fun Facts for Hundred Islands -->
+    <article class="pop-up history hundred-islands">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>HISTORY OF HUNDRED ISLANDS</h1>
+        </div>
+
+        <div class="info">
+          <p>The islands were originally home to the Agta people, later influenced by Spanish colonization and American development. They were also used by Japanese forces during World War II before becoming the national park they are today.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact hundred-islands">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>123? or 124?</h1>
+        </div>
+
+        <div class="info">
+          <p>During high tide, only 123 islands are visible, creating the iconic seascape that the Hundred Islands National Park is known for.  But when the tide recedes, a tiny additional island emerges, bringing the total count to 124.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact hundred-islands">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Only 4 Developed, Hundreds Untouched</h1>
+        </div>
+
+        <div class="info">
+          <p>Out of the entire group, only four islands have been developed for tourism, while 30 are officially named and the rest remain in their natural, pristine condition. Together, they cover about 1,860 hectares in Alaminos, Pangasinan.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact hundred-islands">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Islands 2 Million Years in the Making</h1>
+        </div>
+
+        <div class="info">
+          <p>Scientific studies reveal that the Hundred Islands are around 2 million years old, formed through ancient geological uplifts and marine processes. Over time, the rising seabed and the action of waves and tides sculpted the limestone formations, giving us the scattered emerald islands we see today.</p>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- History and Fun Facts for Mt. Pulag -->
+    <article class="pop-up history mt-pulag">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>HISTORY OF MT. PULAG</h1>
+        </div>
+
+        <div class="info">
+          <p>Mt. Pulag is a sacred mountain, revered by indigenous tribes as the resting place of ancestral souls. It was declared a national park in 1987, protecting both its rich biodiversity and deep cultural significance.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact mt-pulag">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Home of the Dwarf Bamboo</h1>
+        </div>
+
+        <div class="info">
+          <p>The summit is uniquely covered with dwarf bamboo, a rare plant that thrives only in high-altitude environments, giving Mt. Pulag its iconic grassy peak.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact mt-pulag">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>One of the Coldest Place in the Philippines</h1>
+        </div>
+
+        <div class="info">
+          <p>Temperatures in Mt. Pulag can drop below 0°C during peak months, sometimes even forming frost on the grasslands. Mount Pulag once recorded a temperature of −2 °C on December 28, 2015, when the summit dipped below zero.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact mt-pulag">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Sacred Ancestral Ground</h1>
+        </div>
+
+        <div class="info">
+          <p>For the Ibaloi, Ifugao, Kalanguya, and Kankanaey tribes, Mt. Pulag is believed to be the final resting place of their ancestors’ souls. Locals perform rituals and offer prayers before climbs as a sign of respect. This spiritual belief has helped protect the mountain, making it both a natural wonder and a cultural treasure.</p>
+        </div>
+      </div>
+    </article>
+
+    
+    <!-- History and Fun Facts of Sagada Sumaguing Cave -->
+    <article class="pop-up history sagada">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>HISTORY OF SUMAGUING CAVE</h1>
+        </div>
+
+        <div class="info">
+          <p>The cave was formed over millions of years by water dissolving limestone. It holds cultural significance for the local community and is considered both a natural masterpiece and an important part of the Cordillera's landscape.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact sagada">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Home to Thousands of Bats</h1>
+        </div>
+
+        <div class="info">
+          <p>Sumaguing Cave is not only a wonder for tourists but also a natural habitat for thousands of bats. Bat droppings have naturally built up over time inside Sumaguing Cave, making the steep descent at the entrance slippery—an added challenge that makes the spelunking experience even more exciting.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact sagada">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Formations with fun nicknames</h1>
+        </div>
+
+        <div class="info">
+          <p>Many of the cave’s rock formations have been given playful names by locals and guides, such as a turtle, an elephant, and even a chocolate cake, making the exploration more engaging and memorable.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact sagada">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Barefoot stage for safety</h1>
+        </div>
+
+        <div class="info">
+          <p>During the rock formation section, guides encourage visitors to go barefoot. This isn’t to make things harder—it’s because bare feet grip the rocks better than shoes, reducing the risk of slipping.</p>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- Fun Facts of Sagada Vigan City -->
+    <article class="pop-up fun-fact vigan">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>UNESCO Treasure</h1>
+        </div>
+
+        <div class="info">
+          <p>Vigan City, a settlement established by the Spanish in Asia during their colonial period, earned a spot on UNESCO's list in 1999 because of its architecturally distinct cityscape that fuses together influences originating from the Philippines, China, and Spain. The city was also distinguished as one of the New 7 Wonders Cities back in 2015 and is a part of the Organization of World Heritage Cities.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact vigan">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Pottery: Hands-On History</h1>
+        </div>
+
+        <div class="info">
+          <p>Vigan holds a distinguished reputation for its heritage of crafting pottery, notably the production of burnay jars, which serve as containers for both water and wine. This age-old custom, spanning across centuries, is available for observation within various workshops and offers opportunities for hands-on participation, ensuring the preservation of the craft's true essence while simultaneously supporting the endeavors of regional craftspeople.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="pop-up fun-fact vigan">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Church Hopping</h1>
+        </div>
+
+        <div class="info">
+          <p>Vigan features a wealth of churches, notably the Vigan Cathedral, an impressive illustration of Baroque design. Every one of these churches has a distinct architectural style and historical background that provides insight into the area'  religious heritage. Tourists can participate in masses or moments of contemplation, offering a profoundly touching experience.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Trivia -->
+    <article class="pop-up trivia">
+      <div class="pop-up-header">
+        <hr>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="pop-up-content">
+        <div class="title">
+          <h1>Strike a Pose!</h1>
+        </div>
+
+        <div class="info">
+          <p>The Philippines is the selfie capital of the world (based on a TIME magazine study) — so bring your best poses!</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Subscribe Message -->
+    <article class="subscribe-msg">
+      <div class="header">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="content">
+          <p>The email you entered will now received an email every time a new blog update is published on this website.</p>
+          <button class="okButton">Ok</button>
+      </div>
+    </article>
+
 
     <!-- Footer -->
     <div class="group-members">
