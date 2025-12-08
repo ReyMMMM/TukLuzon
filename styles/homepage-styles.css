@@ -14,7 +14,6 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--black);
-  opacity: 0.5;
   top: 0;
   right: 0;
   z-index: 10000;
@@ -32,7 +31,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  text-align: center;
   border-radius: 10px;
   z-index: 10001;
   opacity: 0;
@@ -68,8 +66,9 @@
 }
 
 .pop-up-content div {
+  text-align: center;
+  padding: 40px;
   margin: auto;
-  padding: 20px;
   border-radius: 10px;
   background-color: var(--light-green );
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -78,9 +77,10 @@
 .pop-up-content .title {
   width: 450px;
   margin-bottom: 20px;
-}
+;}
 
 .pop-up-content .info {
+  text-indent: 40px;
   min-height: 300px;
   font-size: 1.3rem;
   text-align: justify;
@@ -114,14 +114,14 @@
 .subscribe-msg .header i {
   position: absolute;
   top: 9px;
-  right: 9px;
+  right: 10px;
   cursor: pointer;
   font-size: 1.3rem;
 }
 
 .subscribe-msg .content {
   height: 100%;
-  padding: 0 10px;
+  padding: 0 20px;
   color: var(--black);
   font-size: 1.3rem;
   align-content: center;
@@ -148,7 +148,7 @@
 }
 
 .active-dimmer {
-  opacity: 0.5;
+  opacity: 0.75;
   visibility: visible;
 }
 
@@ -1234,13 +1234,18 @@
     margin-bottom: 20px
   }
 
+  .pop-up-content div {
+    padding: 25px;
+  }
+
   .pop-up-content .title {
     width: 220px;
     font-size: 0.8rem;
   }
 
   .pop-up-content .info {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-indent: 30px;
   }
 
   .subscribe-msg {
