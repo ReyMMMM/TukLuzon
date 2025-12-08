@@ -87,6 +87,61 @@
   align-content: center;
 }
 
+.subscribe-msg {
+  width: 400px;
+  height: 300px;
+  background-color: #F2F0EF;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 10px;
+  z-index: 10001;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in;
+}
+
+.subscribe-msg .header {
+  width: 100%;
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: var(--light-green);
+}
+
+.subscribe-msg .header i {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.subscribe-msg .content {
+  height: 100%;
+  padding: 0 10px;
+  color: var(--black);
+  font-size: 1.3rem;
+  align-content: center;
+}
+
+.subscribe-msg .content p {
+  margin-bottom: 30px;
+}
+
+.okButton {
+  padding: 10px;
+  width: 100px;
+  border-radius: 5px;
+  color: var(--white);
+  font-size: 1.2rem;
+  border: none;
+  background-color: var(--light-green);
+  cursor: pointer;
+}
+
 .active {
   opacity: 1;
   visibility: visible;
@@ -1182,5 +1237,17 @@
 
   .pop-up-content .info {
     font-size: 1rem;
+  }
+
+  .subscribe-msg {
+    width: 300px;
+  }
+
+  .subscribe-msg .content, .okButton {
+    font-size: 1.1rem;
+  }
+
+  .okButton {
+    width: 80px;
   }
 }

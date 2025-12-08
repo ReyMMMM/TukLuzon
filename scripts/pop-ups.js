@@ -3,16 +3,22 @@ const factButtons = document.querySelectorAll(".fact-button");
 const historyButtons = document.querySelectorAll(".info-button.history");
 const triviaButton = document.querySelector(".info-button.trivia");
 const closeButtons = document.querySelectorAll(".fa-xmark");
+const okButton = document.querySelector(".okButton");
+
+// Form Submission
+const subscribeForm = document.querySelector(".subscribe-form");
+const emailInput = document.querySelector(".email-input");
 
 // Background dimmer
 const bgDimmer = document.querySelector(".bg-dimmer");
 
-// Pop-up info
+// Pop-ups
 const hundredIslandsHistory = document.querySelector(".pop-up.hundred-islands");
 const mtPulagHistory = document.querySelector(".pop-up.mt-pulag");
-const sagadaHistory = document.querySelector(".pop-up.sagada")
+const sagadaHistory = document.querySelector(".pop-up.sagada");
 const funFacts = document.querySelectorAll(".fun-fact");
-const triviaPopUp = document.querySelector(".pop-up.trivia")
+const triviaPopUp = document.querySelector(".pop-up.trivia");
+const subscribeMsg = document.querySelector(".subscribe-msg");
 
 factButtons.forEach(button => {
     button.addEventListener("click", (event) => {
@@ -58,4 +64,18 @@ closeButtons.forEach((button) => {
         parent.classList.toggle("active");
         bgDimmer.classList.toggle("active-dimmer");
     })
+})
+
+subscribeForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    subscribeMsg.classList.toggle("active");
+    bgDimmer.classList.toggle("active-dimmer");
+    emailInput.value = "";
+})
+
+okButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    subscribeMsg.classList.toggle("active");
+    bgDimmer.classList.toggle("active-dimmer");
 })
