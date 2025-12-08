@@ -24,13 +24,13 @@
 
 /* Styles for Pop-up containers */
 .pop-up {
-  width: 600px;
+  width: 650px;
   background-color: var(--accent-green);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;
+  padding: 50px 40px;
   border-radius: 10px;
   z-index: 10001;
   opacity: 0;
@@ -38,12 +38,17 @@
   transition: 0.3s ease-in;
 }
 
-.pop-up.history {
-  background-color: var(--accent-green);
+.fa-solid {
+  transform: translateY(10px);
 }
 
-.pop-up.fun-fact, .pop-up.trivia {
-  background-color: var(--primary-green);
+.pop-up.history {
+  background-color: var(--section-content);
+}
+
+.pop-up.fun-fact,
+.pop-up.trivia {
+  background-color: var(--section-content);
 }
 
 .pop-up hr {
@@ -57,12 +62,16 @@
   position: absolute;
   top: 8px;
   right: 20px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
 .pop-up-header {
-  margin-bottom: 30px
+  margin-bottom: 30px;
+}
+
+.pop-up-footer {
+  margin-top: 50px;
 }
 
 .pop-up-content div {
@@ -70,19 +79,33 @@
   padding: 40px;
   margin: auto;
   border-radius: 10px;
-  background-color: var(--light-green );
+  background-color: var(--light-green);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .pop-up-content .title {
-  width: 450px;
+  width: 500px;
+  padding: 20px;
   margin-bottom: 20px;
-;}
+  box-shadow: var(--shadow-default);
+}
+
+.pop-up-content .title h1 {
+  text-shadow: var(--shadow-strong);
+}
+
+.pop-up-content .info p {
+  text-shadow: var(--shadow-default);
+}
 
 .pop-up-content .info {
   text-indent: 40px;
   min-height: 300px;
-  font-size: 1.3rem;
+  line-height: 32px;
+  font-size: 1.2rem;
+  padding: 40px;
+  padding-bottom: 50px;
+  box-shadow: var(--shadow-default);
   text-align: justify;
   align-content: center;
 }
@@ -90,7 +113,7 @@
 .subscribe-msg {
   width: 400px;
   height: 300px;
-  background-color: #F2F0EF;
+  background-color: #f2f0ef;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -151,8 +174,6 @@
   opacity: 0.75;
   visibility: visible;
 }
-
-
 
 /* Hero Section Styles */
 .hero-section {
@@ -406,11 +427,12 @@
 
 /* Destination images Default */
 .destination-image {
-  width: 95%;
+  width: 93%;
   height: 300px;
   object-fit: cover;
-  border: 0px solid var(--black);
-  margin: 10px;
+  border: 10px solid var(--accent-green);
+  border-bottom: 50px solid var(--accent-green);
+  margin: 15px;
   transition: transform var(--transition-fast);
 }
 
@@ -420,7 +442,8 @@
   height: 100%;
   object-fit: cover;
   align-self: center;
-  border: 2px solid var(--black);
+  border: 10px solid var(--accent-green);
+  border-bottom: 50px solid var(--accent-green);
   margin: 20px;
   transition: transform var(--transition-fast);
 }
@@ -653,7 +676,9 @@
   height: 200px;
   overflow: hidden;
   object-fit: cover;
-  box-shadow: var(--shadow-default);
+  border: 10px solid #f8f8ff;
+  border-bottom: 20px solid #f8f8ff;
+  box-shadow: var(--shadow-strong);
   cursor: pointer;
   transition: transform var(--transition-fast);
 }
@@ -924,7 +949,6 @@
   }
 }
 
-
 /* ===== MOBILE MEDIA QUERY ===== */
 @media (max-width: 480px) {
   /* Section adjustments */
@@ -1096,6 +1120,9 @@
     width: 95%;
     height: 150px;
     align-self: center;
+    border: 5px solid var(--accent-green);
+    border-top: 10px solid var(--accent-green);
+    border-bottom: 25px solid var(--accent-green);
   }
 
   /* Button adjustments for mobile */
@@ -1199,6 +1226,8 @@
   .navigation-button img {
     width: 70px;
     height: 70px;
+    border: 5px solid #f8f8ff;
+    border-bottom: 10px solid #f8f8ff;
   }
 
   /* Subscribe section mobile */
@@ -1218,6 +1247,7 @@
   /* Pop-up mobile design */
   .pop-up {
     width: 300px;
+    padding: 30px;
   }
 
   .pop-up hr {
@@ -1230,8 +1260,18 @@
     font-size: 1.1rem;
   }
 
+  .pop-up-footer i {
+    right: 10px;
+    top: 12px;
+    font-size: 1.1rem;
+  }
+
   .pop-up-header {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+  }
+
+  .pop-up-footer {
+    margin-top: 20px;
   }
 
   .pop-up-content div {
@@ -1240,19 +1280,23 @@
 
   .pop-up-content .title {
     width: 220px;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
   }
 
   .pop-up-content .info {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    line-height: 15px;
     text-indent: 30px;
+    padding: 20px;
+    min-height: 100px;
   }
 
   .subscribe-msg {
     width: 300px;
   }
 
-  .subscribe-msg .content, .okButton {
+  .subscribe-msg .content,
+  .okButton {
     font-size: 1.1rem;
   }
 
