@@ -1,0 +1,72 @@
+.pop-up {
+  width: 600px;
+  background-color: var(--accent-green);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 10001;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in;
+}
+
+.pop-up.history {
+  background-color: var(--accent-green);
+}
+
+.pop-up.fun-fact, .pop-up.trivia {
+  background-color: var(--primary-green);
+}
+
+.pop-up hr {
+  width: 450px;
+  height: 3px;
+  margin: auto;
+  background-color: var(--white);
+}
+
+.pop-up-header i {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.pop-up-header {
+  margin-bottom: 30px
+}
+
+.pop-up-content div {
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--light-green );
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.pop-up-content .title {
+  width: 450px;
+  margin-bottom: 20px;
+}
+
+.pop-up-content .info {
+  height: 300px;
+  font-size: 1.3rem;
+  text-align: justify;
+  align-content: center;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.active-dimmer {
+  opacity: 0.5;
+  visibility: visible;
+}

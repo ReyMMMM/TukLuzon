@@ -51,7 +51,7 @@ body {
   color: var(--text-color);
   text-decoration: none;
   margin-right: 30px;
-  font-size: 14px;
+  font-size: 1.5rem;
   font-weight: 500;
   transition: all var(--transition-fast);
   text-shadow: var(--shadow-text);
@@ -187,9 +187,9 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 480px) {
-  .header {
+  /* .header {
     position: fixed;
-  }
+  } */
 
   .header h2 {
     font-size: 16px;
@@ -206,9 +206,9 @@ body {
 
   .header-nav a {
     margin-right: 10px;
-    font-size: 8px;
+    font-size: 1rem;
     display: inline-block;
-    margin: 7px 3px;
+    margin: 7px 10px;
   }
 
   .header .header-logo {
