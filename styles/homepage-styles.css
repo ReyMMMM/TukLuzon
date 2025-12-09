@@ -136,7 +136,7 @@
 
 .subscribe-msg .header i {
   position: absolute;
-  top: 9px;
+  top: 0px;
   right: 10px;
   cursor: pointer;
   font-size: 1.3rem;
